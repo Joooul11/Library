@@ -1,0 +1,28 @@
+.hidden {
+  display: none;
+}
+
+.book-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+  background: linear-gradient(to bottom right, #ffe580, #ff8c66);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.book-card:hover {
+  transform: scale(1.02);
+}
+.read-toggle.read {
+  background-color: #7fff7f;
+}
+.read-toggle.not-read {
+  background-color: #ff7f7f;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
