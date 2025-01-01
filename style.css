@@ -1,5 +1,5 @@
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .book-card {
@@ -11,12 +11,48 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s;
 }
+
+.library-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  padding: 16px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+  .library-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .library-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .library-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .library-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .book-card:hover {
   transform: scale(1.02);
 }
+
 .read-toggle.read {
   background-color: #7fff7f;
 }
+
 .read-toggle.not-read {
   background-color: #ff7f7f;
 }
@@ -25,4 +61,48 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+#book-form {
+  background: linear-gradient(to bottom right, #ffe580, #ff8c66);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#book-form input[type="text"],
+#book-form input[type="number"] {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#book-form button[type="submit"] {
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#book-form button[type="submit"]:hover {
+  background-color: #6ae76a;
+}
+
+.book-btn {
+  background: linear-gradient(to bottom right, #ffe580, #ff8c66);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.book-btn:hover {
+  opacity: 0.9;
 }

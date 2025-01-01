@@ -1,7 +1,7 @@
 const mylibrary = []
 function Book(title, author, pages, read) {
   this.title = title
-  this.author = title
+  this.author = author 
   this.pages = pages
   this.read = read
 }
@@ -45,6 +45,8 @@ function displayBooks() {
 }
 
 const form = document.getElementById('book-form');
+console.log('Form element found:', form); // Debug log
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.getElementById('title').value;
@@ -60,8 +62,17 @@ form.addEventListener('submit', (e) => {
 
 const newBookBtn = document.createElement('button');
 newBookBtn.textContent = 'New Book';
+newBookBtn.classList.add('book-btn');
 newBookBtn.addEventListener('click', () => {
-  form.classList.toggle('hidden');
+    if (form) {
+        if (form.style.display === 'none' || form.classList.contains('hidden')) {
+            form.style.display = 'flex';
+            form.classList.remove('hidden');
+        } else {
+            form.style.display = 'none';
+            form.classList.add('hidden');
+        }
+    }
 });
 document.body.prepend(newBookBtn);
 
