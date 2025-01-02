@@ -3,7 +3,6 @@ function Book(title, author, pages, read) {
   this.title = title
   this.author = author 
   this.pages = pages
-  this.read = read
 }
 
 function addBookToLibrary(book) {
@@ -61,8 +60,12 @@ form.addEventListener('submit', (e) => {
 });
 
 const newBookBtn = document.createElement('button');
+const buttonContainer = document.createElement('div');
+buttonContainer.classList.add('button-container');
 newBookBtn.textContent = 'New Book';
 newBookBtn.classList.add('book-btn');
+buttonContainer.appendChild(newBookBtn);
+document.body.prepend(buttonContainer);
 newBookBtn.addEventListener('click', () => {
     if (form) {
         if (form.style.display === 'none' || form.classList.contains('hidden')) {
@@ -74,6 +77,5 @@ newBookBtn.addEventListener('click', () => {
         }
     }
 });
-document.body.prepend(newBookBtn);
 
 
