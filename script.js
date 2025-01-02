@@ -1,4 +1,5 @@
 const mylibrary = []
+
 function Book(title, author, pages, read) {
   this.title = title
   this.author = author 
@@ -44,7 +45,7 @@ function displayBooks() {
 }
 
 const form = document.getElementById('book-form');
-console.log('Form element found:', form); // Debug log
+console.log('Form element found:', form); 
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
