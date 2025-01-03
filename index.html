@@ -12,8 +12,12 @@
         <h1>My Library</h1>
         <button id="new-book-btn" class="new-book-btn">+ New Book</button>
     </header>
-    <div class="library-container">
-    </div>
+    <main>
+        <div class="library-container">
+        </div>
+    </main>
+
+    <div class="backdrop"></div>
 
     <form id="book-form" class="hidden">
       <input type="text" id="title" placeholder="Book Title" required>
@@ -22,7 +26,7 @@
       <div class="read-status">
         <label>
           <input type="checkbox" id="read">
-          Have you read it?
+          <span>Have you read it?</span>
         </label>
       </div>
       <button type="submit" class="book-btn">Add Book</button>

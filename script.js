@@ -1,7 +1,7 @@
 class Book {
     constructor(title, author, pages, read) {
         this.title = title;
-        this.author = author;
+        this.author = title;
         this.pages = pages;
         this.read = read;
     }
@@ -35,6 +35,7 @@ class UI {
         this.container = document.querySelector('.library-container');
         this.form = document.getElementById('book-form');
         this.newBookBtn = document.getElementById('new-book-btn');
+        this.backdrop = document.querySelector('.backdrop');
         this.initializeEventListeners();
     }
 
@@ -60,6 +61,7 @@ class UI {
 
     toggleForm() {
         this.form.classList.toggle('hidden');
+        this.backdrop.classList.toggle('active');
     }
 
     handleSubmit(e) {
